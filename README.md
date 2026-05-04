@@ -42,3 +42,9 @@
 
 ---
 *Built with nostalgia for the Y2K era.*
+
+## 📝 License
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+*Developed by [Shehan Fernando](https://github.com/shehandfernando)*
