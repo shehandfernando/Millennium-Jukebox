@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+  background-color: #2b2b2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Verdana', sans-serif;
+  transition: background-color 0.3s;
+}
+
+/* --- BASE THEME (LIQUID METAL) --- */
+.jukebox-container {
+  width: 340px;
+  background: linear-gradient(180deg, #e6e6e6 0%, #b8b8b8 40%, #999999 100%);
+  border: 2px solid #555;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4),
+    5px 5px 15px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.branding {
+  font-size: 10px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
+}
+
+.btn-load, .btn-theme {
+  font-size: 9px;
+  padding: 4px 8px;
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid #111;
+}
+
+.btn-load { background: linear-gradient(180deg, #ff9999 0%, #cc0000 100%); }
+.btn-load:active { background: linear-gradient(180deg, #cc0000 0%, #ff9999 100%); }
+
+.btn-theme { background: linear-gradient(180deg, #888 0%, #444 100%); }
+.btn-theme:active { background: linear-gradient(180deg, #444 0%, #888 100%); }
+
+.btn-genre {
+  background: linear-gradient(180deg, #d4d4d4 0%, #aaaaaa 100%);
+  outline: none;
+  font-family: 'Verdana', sans-serif;
+  font-weight: bold;
+  font-size: 9px;
+  padding: 4px 8px;
+  border: 1px solid #111;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* --- LCD SCREEN & VISUALIZER --- */
+.lcd-screen {
+  background-color: #050a05;
+  border: 3px solid #111;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-shadow: inset 0px 0px 10px #000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visualizer {
+  background: #000;
+  border: 1px solid #222;
+  border-radius: 2px;
+}
+
+.lcd-info {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.lcd-text {
+  font-family: 'VT323', monospace;
+  color: #00ff00;
+  font-size: 20px;
+  margin: 0;
+  text-shadow: 0px 0px 5px #00ff00;
+  white-space: nowrap;
+  animation: scrollText 7s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.lcd-status {
+  font-family: 'VT323', monospace;
+  color: #00ff00;
+  font-size: 14px;
+  text-shadow: 0px 0px 3px #00ff00;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+/* --- HARDWARE CONTROLS --- */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px 0;
+  background: linear-gradient(180deg, #f0f0f0 0%, #d4d4d4 50%, #aaaaaa 100%);
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.9),
+    1px 1px 3px rgba(0, 0, 0, 0.5);
+  color: #333;
+}
+
+.btn:active {
+  background: linear-gradient(180deg, #aaaaaa 0%, #d4d4d4 50%, #f0f0f0 100%);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+}
+
+/* --- SLIDERS (SCRUBBER & VOLUME) --- */
+.scrubber-container, .volume-container {
+  display: flex;
+  align-items: center;
+  background: #333;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #111;
+  box-shadow: inset 1px 1px 3px #000;
+}
+
+.volume-container { margin-top: 10px; }
+
+.vol-label {
+  color: #aaa;
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 8px;
+  letter-spacing: 1px;
+}
+
+.vol-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none; /* Compatibility fix for VS Code warning */
+  background: #111;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: inset 1px 1px 2px #000;
+}
+
+.vol-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 20px;
+  background: linear-gradient(90deg, #ccc 0%, #fff 50%, #aaa 100%);
+  border: 1px solid #555;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.scrubber::-webkit-slider-thumb {
+  width: 20px;
+  height: 12px;
+}
+
+/* --- PLAYLIST --- */
+.playlist {
+  margin-top: 15px;
+  background: #000;
+  border: 2px solid #444;
+  height: 100px;
+  overflow-y: auto;
+  padding: 5px;
+  color: #00ff00;
+}
+
+.track-item {
+  font-size: 11px;
+  padding: 4px;
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+}
+
+.track-item:hover { background-color: #111; }
+.track-item.active {
+  background-color: #00ff00;
+  color: #000;
+  font-weight: bold;
+}
+
+/* =========================================
+   SKIN: NEON CYBER (The Override Class)
+   ========================================= */
+.theme-cyber {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+  border-color: #000;
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.8),
+    0px 0px 20px rgba(233, 69, 96, 0.4);
+}
+
+.theme-cyber .branding {
+  color: #e94560;
+  text-shadow: 0px 0px 3px rgba(233, 69, 96, 0.8);
+}
+
+.theme-cyber .btn {
+  background: linear-gradient(180deg, #2a2a4a 0%, #1a1a3a 50%, #111122 100%);
+  border-color: #000;
+  color: #e94560;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.2),
+    1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.theme-cyber .btn:active {
+  background: linear-gradient(180deg, #111122 0%, #1a1a3a 50%, #2a2a4a 100%);
+}
+
+.theme-cyber .lcd-screen {
+  border-color: #e94560;
+  box-shadow: inset 0px 0px 10px #e94560;
+}
+
+.theme-cyber .lcd-text, .theme-cyber .lcd-status {
+  color: #ff00ff;
+  text-shadow: 0px 0px 5px #ff00ff;
+}
+
+.theme-cyber .playlist {
+  border-color: #e94560;
+  color: #ff00ff;
+}
+
+.theme-cyber .track-item.active {
+  background-color: #ff00ff;
+  color: #fff;
+}
+
+.theme-cyber .vol-slider::-webkit-slider-thumb {
+  background: linear-gradient(90deg, #e94560 0%, #ff6b81 50%, #e94560 100%);
+  border-color: #000;
+}
+
+.theme-cyber .btn-genre {
+  background: linear-gradient(180deg, #2a2a4a 0%, #1a1a3a 50%, #111122 100%);
+  color: #e94560;
+}
