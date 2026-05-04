@@ -1,6 +1,6 @@
 # 💽 Millennium Jukebox
 
-![Millennium Jukebox Interface Preview](./Img-1.png)
+![Millennium Jukebox Interface Preview](./Img-3.png)
 
 **Millennium Jukebox** is a fully functional, retrofuturistic web audio player that captures the "Digital Maximalism" and "Blobject" aesthetics of the late '90s and early 2000s. Inspired by iconic software like Winamp and the design language of the original iMac G3, it blends turn-of-the-century tech optimism with a modern React engine.
 
